@@ -17,7 +17,7 @@ server.use(express.json());
 server.use( cookieParser() )
 
 server.use('/api/auth', authRouter);
-server.use('/api/jokes', restrict, jokesRouter);
+server.use('/api/jokes', restrict(), jokesRouter);
 
 server.use((err, req, res, next) => {
 	console.log(err)

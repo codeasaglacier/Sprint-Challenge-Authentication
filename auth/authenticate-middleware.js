@@ -8,7 +8,8 @@ function restrict() {
 	return async ( req, res, next ) => {
       console.log( 1 )
 		try {
-      const token = req.cookies.token
+			// const token = req.cookies.token
+			const token = req.headers.authorization
       console.log( 2 )
 			if ( !token ) {
 				return res.status( 401 ).json( authError )

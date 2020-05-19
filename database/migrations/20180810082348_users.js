@@ -4,9 +4,11 @@ exports.up = function(knex) {
 
     users
       .string('username', 255)
-      .notNullable()
+      .notNull()
       .unique();
-    users.string('password', 255).notNullable();
+    users
+      .string('password', 255)
+      .notNull();
   });
 };
 
